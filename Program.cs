@@ -6,7 +6,11 @@ namespace DruidClub
     {
         static void Main(string[] args)
         {
-           
+           PizzaDriud pizzaDriud = new PizzaDriud();
+            pizzaDriud.MakeOrder();
+            pizzaDriud.MakeOrder();
+            pizzaDriud.MakeOrder();
+            pizzaDriud.GetOrderList();
         }
     }
 }

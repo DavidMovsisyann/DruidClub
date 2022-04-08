@@ -8,27 +8,27 @@ namespace DruidClub
 {
     internal class CafeDruid:DruidClub
     {
-        public override void MakePizza()
+        public override void MakePizza(int count)
         {
             Products.Tomato--;
             Products.Sausage--;
             Products.Dough--;
             Products.Mushroom--;
-            Pizza++;
+            Pizza+=count;
         }
-        public override void MakeBurger()
+        public override void MakeBurger(int count)
         {
             Products.Meat--;
             Products.Cheese--;
             Products.Dough--;
-            Burger++;
+            Burger+=count;
         }
-        public override void MakeSoup()
+        public override void MakeSoup(int count)
         {
             Products.Meat++;
             Products.Potato++;
             Products.Mushroom--;
-            Soup++;
+            Soup+=count;
         }
         
     }
