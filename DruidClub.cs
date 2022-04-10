@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DruidClub
 {
-    internal class DruidClub
+    internal class DruidClub:IOrders
     {
         public int Pizza { get; set; }
         public int Burger { get; set; }
@@ -36,36 +36,6 @@ namespace DruidClub
         {
             HotDog+=count;
         }
-        public void MakeOrder()
-        {
-            Console.WriteLine("What do you want?");
-            string food = Console.ReadLine();
-            Console.WriteLine("How Many");
-            int count = int.Parse(Console.ReadLine());
-            switch (food)
-            {
-                case "Pizza":
-                    MakePizza(count);
-                    Order.Add("Pizza",Pizza);
-                    break;
-                case "Burger":
-                    MakeBurger(count);
-                    Order.Add("Burger", Burger);
-                    break;
-                case "Soup":
-                    MakeSoup(count);
-                    Order.Add("Soup",Soup);
-                    break;
-                case "Steak":
-                    MakeSteak(count);
-                    Order.Add("Steak",Steak);
-                    break;
-                case "HotDog":
-                    MakeHotDog(count);
-                    Order.Add("HotDog",HotDog);
-                    break;
-            }
-        }
         public void GetNumberOfFoods()
         {
             Console.WriteLine(Pizza);
@@ -79,6 +49,37 @@ namespace DruidClub
             foreach (var item in Order)
                 Console.WriteLine(item);
         }
+        public void MakeOrder()
+        {
+            Console.WriteLine("What do you want?");
+            string food = Console.ReadLine();
+            Console.WriteLine("How Many");
+            int count = int.Parse(Console.ReadLine());
+            switch (food)
+            {
+                case "Pizza":
+                    MakePizza(count);
+                    Order.Add("Pizza", Pizza);
+                    break;
+                case "Burger":
+                    MakeBurger(count);
+                    Order.Add("Burger", Burger);
+                    break;
+                case "Soup":
+                    MakeSoup(count);
+                    Order.Add("Soup", Soup);
+                    break;
+                case "Steak":
+                    MakeSteak(count);
+                    Order.Add("Steak", Steak);
+                    break;
+                case "HotDog":
+                    MakeHotDog(count);
+                    Order.Add("HotDog", HotDog);
+                    break;
+            }
+        }
+
     }
 }
 
